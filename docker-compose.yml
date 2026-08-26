@@ -20,6 +20,7 @@ services:
 
     ports:
       - "4096:4096"
+      - "8080:8080"
 
     volumes:
       - data:/home/opencode

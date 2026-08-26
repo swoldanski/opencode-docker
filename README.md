@@ -23,6 +23,8 @@ docker compose up -d
 
 This will start the OpenCode web interface on `http://localhost:4096`.
 
+The `8080` port is also exposed on the `opencode` service. When you work on a project inside the container, you can run your own app and access it from the host at `http://localhost:8080`, provided the app is configured to listen on `0.0.0.0:8080`.
+
 ## Configuration
 
 ### Environment Variables
