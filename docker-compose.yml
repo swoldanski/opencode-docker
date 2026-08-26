@@ -11,13 +11,14 @@ services:
       - "4096:4096"
 
     volumes:
-      - /opt/opencode/.local/share/opencode:/home/opencode/.local/share/opencode
-      - /opt/opencode/.local/state/opencode:/home/opencode/.local/state/opencode
-      - /opt/opencode/.config/opencode:/home/opencode/.config/opencode
-
+      - data:/home/opencode
+      
     environment:
       - TZ=${TZ}
       - OPENCODE_SERVER_USERNAME=${OPENCODE_SERVER_USERNAME}
       - OPENCODE_SERVER_PASSWORD=${OPENCODE_SERVER_PASSWORD}
 
     restart: unless-stopped
+    
+volumes:
+  data:
