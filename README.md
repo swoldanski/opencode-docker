@@ -4,7 +4,7 @@ This repository provides a Docker image for running [OpenCode](https://github.co
 The image is automatically built and updated via GitHub Actions whenever a new release of OpenCode is published.
 
 Published images are available on GitHub Container Registry at `ghcr.io/pilinux/opencode`,
-tagged with the corresponding OpenCode version (e.g., `ghcr.io/pilinux/opencode:1.2.5`) and `latest`.
+tagged with the corresponding OpenCode version (e.g., `ghcr.io/pilinux/opencode:1.18.23`) and `latest`.
 
 List of available versions can be found on the [GitHub Container Registry page](https://github.com/pilinux/opencode-docker/pkgs/container/opencode).
 
