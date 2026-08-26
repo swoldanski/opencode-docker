@@ -3,7 +3,7 @@ services:
   init-projects:
     image: busybox:1.36
     container_name: init-projects
-    command: sh -c "mkdir -p /projects && chown -R 1000:1000 /projects"
+    command: sh -c "mkdir -p /projects && chown -R 1001:1001 /projects"
     volumes:
       - projects:/projects
     # run as root so chown works
