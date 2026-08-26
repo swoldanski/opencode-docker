@@ -1,5 +1,16 @@
 name: opencode
 services:
+  init-projects:
+    image: busybox:1.36
+    container_name: init-projects
+    command: sh -c "mkdir -p /projects && chown -R 1000:1000 /projects"
+    volumes:
+      - projects:/projects
+    # run as root so chown works
+    user: "0:0"
+    # one-shot job
+    restart: "no"
+
   opencode:
     image: ghcr.io/pilinux/opencode:1.2.5
     container_name: opencode
@@ -12,13 +23,17 @@ services:
 
     volumes:
       - data:/home/opencode
-      
+      - projects:/projects
+
     environment:
       - TZ=${TZ}
       - OPENCODE_SERVER_USERNAME=${OPENCODE_SERVER_USERNAME}
       - OPENCODE_SERVER_PASSWORD=${OPENCODE_SERVER_PASSWORD}
 
     restart: unless-stopped
-    
+    depends_on:
+      - init-projects
+
 volumes:
   data:
+  projects:
