@@ -1,4 +1,4 @@
-name: dev
+name: opencode
 services:
   opencode:
     image: ghcr.io/pilinux/opencode:1.2.5
@@ -8,12 +8,12 @@ services:
     command: opencode serve --hostname 0.0.0.0 --port 4096
 
     ports:
-      - "172.17.0.1:4096:4096"
+      - "4096:4096"
 
     volumes:
-      - ./data/share:/home/opencode/.local/share/opencode
-      - ./data/state:/home/opencode/.local/state/opencode
-      - ./data/config:/home/opencode/.config/opencode
+      - /opt/opencode/.local/share/opencode:/home/opencode/.local/share/opencode
+      - /opt/opencode/.local/state/opencode:/home/opencode/.local/state/opencode
+      - /opt/opencode/.config/opencode:/home/opencode/.config/opencode
 
     environment:
       - TZ=${TZ}
