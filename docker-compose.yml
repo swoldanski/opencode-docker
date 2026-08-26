@@ -12,7 +12,7 @@ services:
     restart: "no"
 
   opencode:
-    image: ghcr.io/pilinux/opencode:1.2.5
+    image: ghcr.io/pilinux/opencode:latest
     container_name: opencode
 
     # listen on all interfaces INSIDE the container
